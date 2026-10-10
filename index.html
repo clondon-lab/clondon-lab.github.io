@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charlie London</title>
+<meta name="description" content="Charlie London, UNC Kenan-Flagler '29. Business and Data Science.">
+<meta property="og:title" content="Charlie London">
+<meta property="og:description" content="UNC Kenan-Flagler '29. Business and Data Science. Morehead-Cain Scholar.">
+<meta property="og:type" content="website">
+<!-- After the domain is live, add: <meta property="og:image" content="https://YOURDOMAIN/img/headshot.jpg"> -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313294B'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='white' text-anchor='middle'%3ECL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF8F4; --card:#FFFFFF; --ink:#16233A; --ink-2:#4A5568; --ink-3:#8A93A3;
+  --line:#E4DFD6; --navy:#13294B; --carolina:#4B9CD3; --carolina-soft:#E7F1F9;
+  --serif:"Newsreader",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;margin:0}
+h2{font-size:34px;margin-bottom:8px}
+.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--carolina);font-weight:600;margin:0 0 10px}
+.lede{color:var(--ink-2);max-width:620px;margin:0}
+section{padding:96px 0 40px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(250,248,244,.9);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
+nav.scrolled{border-bottom-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--serif);font-size:20px;text-decoration:none}
+.links{display:flex;gap:26px;align-items:center;font-size:14px}
+.links a{text-decoration:none;color:var(--ink-2)}
+.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--navy);font-size:14px;font-weight:500;text-decoration:none;transition:background .15s,color .15s}
+.btn:hover{background:var(--navy);color:#fff}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.solid:hover{background:#0c1c35}
+.links .btn{color:var(--navy)}
+@media (max-width:760px){.links a:not(.btn){display:none}}
+
+/* hero */
+.hero{padding:72px 0 24px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(48px,7vw,76px);line-height:1}
+.meta{margin:18px 0 0;color:var(--ink-2);font-size:17px}
+.meta span+span::before{content:"·";margin:0 10px;color:var(--ink-3)}
+.now{margin:32px 0 0;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.now p{margin:0 0 8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.now ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.now li{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.now a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--carolina)}
+.now a:hover{color:var(--carolina)}
+.now small{color:var(--ink-2);font-size:14px}
+.cta{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.headshot{aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--carolina-soft)}
+.headshot img{width:100%;height:100%;object-fit:cover}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr;gap:28px}.headshot{max-width:280px;order:-1}}
+
+/* placeholders: swap for real photos */
+.ph{display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;background:repeating-linear-gradient(135deg,#EEF3F8 0 12px,#E6EDF5 12px 24px);color:#5B7590;font-size:13px;font-weight:500;width:100%;height:100%}
+
+/* timeline */
+.tl{position:relative;margin-top:56px}
+.tl svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.tl .track{fill:none;stroke:var(--line);stroke-width:2}
+.tl .draw{fill:none;stroke:var(--navy);stroke-width:2.5;stroke-linecap:round}
+.item{position:relative;height:150px}
+.trig{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;padding:8px 0;font:inherit;color:inherit;cursor:pointer;text-align:inherit;max-width:300px}
+.trig .d{display:block;font-size:13px;color:var(--ink-3);font-weight:500}
+.trig .t{display:block;font-family:var(--serif);font-size:22px;line-height:1.2;transition:color .15s}
+.dot{position:absolute;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:var(--bg);border:2.5px solid var(--line);transition:border-color .3s,background .3s,transform .2s;z-index:2}
+.item.reached .dot{border-color:var(--navy)}
+.item:hover .dot,.item.open .dot{background:var(--navy);transform:scale(1.25)}
+.item:hover .trig .t,.item.open .trig .t{color:var(--navy)}
+.item{pointer-events:none}
+.trig,.dot{pointer-events:auto}
+.card{position:absolute;top:50%;width:min(390px,40%);background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 18px 40px -18px rgba(19,41,75,.35);opacity:0;visibility:hidden;transform:translateY(-46%) scale(.98);transition:opacity .18s,transform .18s,visibility 0s linear .18s;z-index:10}
+.item.open .card,.item:focus-within .card{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(-50%) scale(1);transition-delay:0s}
+.item.open,.item:focus-within{z-index:20}
+.card .pic{height:250px;background:var(--carolina-soft)}
+.pic.fit{position:relative;overflow:hidden;background:#1d2a3d}
+.pic.fit::before{content:"";position:absolute;inset:-24px;background:var(--bg) center/cover;filter:blur(20px) brightness(.75)}
+.pic.fit img{position:relative;width:100%;height:100%;object-fit:contain!important}
+.card .body a.inline,.aw-desc a.inline{display:inline;margin:0;text-decoration:underline;text-underline-offset:2px}
+.awards{list-style:none;margin:2px 0 0!important;padding:0!important}
+.awards li{display:flex;justify-content:space-between;gap:12px;padding:6px 8px;margin:0 -8px;border-radius:8px;cursor:default;outline:none}
+.awards li em{font-style:normal;color:var(--ink-3);font-size:13px;white-space:nowrap}
+.awards li:hover,.awards li.on,.awards li:focus{background:var(--carolina-soft);color:var(--navy)}
+.aw-desc{margin-top:8px!important;padding-top:10px;border-top:1px solid var(--line);font-size:13.5px;min-height:5.6em;color:var(--ink-2)}
+.card .pic img{width:100%;height:100%;object-fit:cover}
+.card .pic.logo img{object-fit:contain;padding:20px;background:#fff}
+.card .body{padding:16px 18px 18px;font-size:14.5px;color:var(--ink-2)}
+.card .body p{margin:0}
+.card .body ul{margin:8px 0 0;padding-left:18px}
+.card .body a{display:inline-block;margin-top:10px;color:var(--navy);font-weight:500}
+.tl-hint{font-size:13px;color:var(--ink-3);margin-top:12px}
+@media (max-width:760px){
+  .item{height:auto;padding:14px 0 14px 48px}
+  .trig{position:static;transform:none;text-align:left;max-width:none}
+  .dot{left:20px!important;top:36px}
+  .card{position:static;width:auto;opacity:1;transform:none;display:none;margin-top:10px;box-shadow:none}
+  .item.open .card{display:block;transform:none}
+  .item:hover .card{transform:none}
+  .item:not(.open):hover .card{display:none}
+}
+
+/* pitches */
+.pitch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.feature{margin-top:44px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px}
+.tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);background:var(--carolina-soft);padding:4px 10px;border-radius:999px}
+.feature h3{font-size:30px;margin:12px 0 4px}
+.feature .sub{color:var(--ink-3);font-size:14px;margin:0 0 14px}
+.feature p{color:var(--ink-2);margin:0 0 12px}
+.stats{display:grid;gap:10px;align-content:start}
+.stat{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-family:var(--serif);font-weight:500;font-size:26px;color:var(--navy);line-height:1.1}
+.stat span{font-size:13px;color:var(--ink-2)}
+details{margin-top:6px}
+summary{cursor:pointer;color:var(--navy);font-weight:500;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:" →"}
+details[open] summary::after{content:" ↑"}
+.thesis{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.fine{font-size:12.5px;color:var(--ink-3)}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.pcard .pic{height:170px}
+.pcard .pic img{width:100%;height:100%;object-fit:cover}
+.pcard .pic.logo{background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.pcard .pic.logo img{width:70%;height:auto;max-height:60%;object-fit:contain}
+.pcard .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pcard h3{font-size:22px}
+.pcard .where{font-size:13px;color:var(--ink-3)}
+.pcard p{margin:0;color:var(--ink-2);font-size:14.5px}
+.pcard .req{margin-top:auto;padding-top:8px;font-size:13px;color:var(--navy);font-weight:500}
+@media (max-width:860px){.feature{grid-template-columns:1fr}.pitch-grid{grid-template-columns:1fr}}
+
+/* travel */
+.map-wrap{position:relative;margin-top:36px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:12px}
+#map{width:100%;height:auto;display:block}
+#map .land{fill:#E9E5DD;stroke:#fff;stroke-width:.5}
+#map .land.been{fill:#BBD7EE}
+#map .land.been.hot{fill:var(--carolina)}
+#map .pin{fill:var(--navy);stroke:#fff;stroke-width:1.5;cursor:pointer;transition:r .15s}
+#map .pin.hot{fill:var(--carolina)}
+.mcard{position:absolute;width:260px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 18px 40px -18px rgba(19,41,75,.4);opacity:0;pointer-events:none;transition:opacity .15s;z-index:5}
+.mcard.show{opacity:1;pointer-events:auto}
+.mcard .pic{height:180px}
+.mcard .pic img{width:100%;height:100%;object-fit:cover}
+.mcard .body{padding:12px 14px;font-size:14px;color:var(--ink-2)}
+.mcard .body b{display:block;font-family:var(--serif);font-weight:500;font-size:19px;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;color:var(--ink-2);cursor:pointer}
+.chip:hover,.chip.hot{border-color:var(--navy);color:var(--navy)}
+
+/* outside */
+.mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:210px;gap:14px;margin-top:36px}
+.tile{margin:0;position:relative;border-radius:16px;overflow:hidden;background:var(--carolina-soft)}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.tile:hover img{transform:scale(1.04)}
+.tile.big{grid-column:span 2;grid-row:span 2}
+.tile.wide{grid-column:span 2}
+.tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 16px 14px;color:#fff;font-size:14px;background:linear-gradient(transparent,rgba(10,20,38,.75))}
+.tile figcaption b{display:block;font-family:var(--serif);font-weight:500;font-size:20px}
+.tile .ph{align-items:flex-start;padding-top:20px}
+.tile .ph+figcaption{background:none;color:var(--navy)}
+@media (max-width:760px){.mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.tile.big{grid-column:span 2}}
+
+.band-art{position:absolute;inset:0;background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.band-art b{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.1}
+.band-art span{font-size:13px;color:#C9D6E8;margin-top:4px}
+.eq{position:absolute;top:22px;left:16px;right:16px;height:70px;display:flex;align-items:flex-end;gap:6px}
+.eq i{flex:1;background:var(--carolina);border-radius:3px;height:30%;animation:eq 1.6s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:-.4s}.eq i:nth-child(3){animation-delay:-1.1s}.eq i:nth-child(4){animation-delay:-.7s}.eq i:nth-child(5){animation-delay:-1.4s}.eq i:nth-child(6){animation-delay:-.2s}.eq i:nth-child(7){animation-delay:-.9s}
+@keyframes eq{0%{height:18%}50%{height:85%}100%{height:40%}}
+@media (prefers-reduced-motion:reduce){.eq i{animation:none;height:55%}}
+
+/* contact */
+.contact{padding:96px 0 64px}
+.contact .box{background:var(--navy);color:#fff;border-radius:24px;padding:48px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:center}
+.contact h2{color:#fff}
+.contact p{color:#C9D6E8;margin:0}
+.contact .btn{border-color:#fff;color:#fff}
+.contact .btn:hover{background:#fff;color:var(--navy)}
+.contact .btn.solid{background:#fff;color:var(--navy)}
+.reading{margin-top:18px;font-size:14px}
+.reading b{color:#fff;font-weight:500}
+@media (max-width:760px){.contact .box{grid-template-columns:1fr;padding:32px}}
+footer{padding:0 0 40px;color:var(--ink-3);font-size:13px}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <a class="brand" href="#top">Charlie London</a>
+  <div class="links">
+    <a href="#timeline">Timeline</a>
+    <a href="#pitches">Pitches</a>
+    <a href="#travel">Travel</a>
+    <a href="#outside">Outside work</a>
+    <a class="btn" href="London_Charlie.pdf" target="_blank" rel="noopener">Resume</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <h1>Charlie London</h1>
+    <p class="meta"><span>UNC Kenan-Flagler '29</span><span>Business and Data Science</span><span>Morehead-Cain Scholar</span></p>
+    <div class="now">
+      <p>Currently</p>
+      <ul>
+        <li><a href="https://www.anvil.partners" target="_blank" rel="noopener">Anvil Partners</a><small>M&amp;A Research Analyst</small></li>
+        <li><a href="https://arcusconnect.com" target="_blank" rel="noopener">Arcus Connect</a><small>Founder</small></li>
+      </ul>
+    </div>
+    <div class="cta">
+      <a class="btn solid" href="London_Charlie.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="btn" href="https://www.linkedin.com/in/charlieb-london/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="mailto:chalondo@unc.edu">chalondo@unc.edu</a>
+    </div>
+  </div>
+  <div class="headshot"><img src="img/headshot.jpg" alt="Charlie London"></div>
+</div></header>
+
+<section id="timeline"><div class="wrap">
+  <p class="kicker">Timeline</p>
+  <h2>My Story</h2>
+  <p class="tl-hint" id="tlHint">Hover over any point for more.</p>
+  <div class="tl" id="tl">
+    <svg aria-hidden="true"><path class="track" id="track"/><path class="draw" id="draw"/></svg>
+  </div>
+</div></section>
+
+<section id="pitches"><div class="wrap">
+  <p class="kicker">Pitches</p>
+  <h2>Companies I've pitched</h2>
+
+  <article class="feature reveal">
+    <div>
+      <span class="tag">Long · Fundamental Investing Practicum</span>
+      <h3>Energy Transfer (NYSE: ET)</h3>
+      <p class="sub">Fall 2026</p>
+      <p>About 140,000 miles of pipeline across 44 states, with roughly 90% of 2026 adjusted EBITDA expected to be fee-based. Long contracts for firm capacity mean shippers effectively rent the pipe, which shields ET from energy cycles.</p>
+      <p>Investors are overweighting high leverage and an acquisitive growth strategy, and underpricing ET's scale advantage as LNG and data center demand grow. The return doesn't depend on the MLP discount closing: it comes from the distribution plus 3–5% annual growth.</p>
+      <details>
+        <summary>Read the full thesis</summary>
+        <div class="thesis">
+          <p>Energy Transfer is an American midstream energy infrastructure company with approximately 140,000 miles of pipeline across 44 states. ET has a high quality of earnings, with roughly 90% of 2026 adjusted EBITDA expected to be fee-based. Its Q2 2026 Adjusted EBITDA was just over $5B, up 31%, with a $74B market cap. ET also delivers a high 6.3% distribution yield, a payout it has raised for 19 consecutive quarters. Energy Transfer is fundamentally solid and set for significant growth as liquefied natural gas and data center energy demand continue to grow. Investors are overweighting the risks of high leverage and an acquisitive growth strategy, and are not pricing in enough ET's scale advantage in meeting that demand.</p>
+          <p>Energy Transfer's pipelines run directly from wellhead to demand center, creating a high switching cost for their customers. Furthermore, their large contracts frequently run 10 to 20 years, much of it firm capacity. Shippers effectively rent the pipe rather than paying for what they actually move, which shields ET from energy cyclicity.</p>
+          <p>Energy Transfer has a large moat and is well protected from new entrants. An interstate line needs a FERC certificate that often takes over six years to secure, not to mention the billions of dollars and time needed to build it. ET also owns the general partner interests in USA Compression Partners and Sunoco, vertically integrating its own compression and fuel distribution and adding depth against peers like Kinder Morgan, Enterprise Products Partners, and Williams.</p>
+          <p>Looking forward, Energy Transfer's management sees around 16 billion cubic feet per day (Bcf/d) of LNG demand growth by the early 2030s. Not to mention the demand already apparent from data centers. To meet it, ET is spending $5.6B to $5.9B of growth capex this year and expects $5B or more annually through 2029. Hugh Brinson Phase I is in service and reaching its full 1.5 Bcf/d this month, and the $5.6B Desert Southwest Pipeline will add 2.3 Bcf/d by late 2029. Management is targeting 3-5% annual distribution growth.</p>
+          <p>ET's biggest threats are its aggressive buildout strategy and its corporate structure. Their leverage is targeted at 4-4.5x EBITDA and currently sits in the lower half of that range, supporting BBB/Baa2 ratings. The markets have factored in this sizeable number, but Q2 distributable cash flow covered the distribution more than twice over, a safety net for this level of leverage. There is demonstrated need for the pipelines they are building, and regardless of whether data center buildout is excessive, those facilities will require immense energy to run.</p>
+          <p>As for their corporate structure, ET is an MLP meaning investors receive a K-1 instead of 1099. This repels index funds and tax-exempt institutions and causes ET to trade at a cheaper price. My thesis does not need that discount to close. Instead, the return comes from the 6.3% distribution and 3-5% growth on top of it from purely expanding operations. Many investors are also afraid of ET's aggressive acquisitions and capex spend, but I believe now is the time for that more than ever. Long-haul capacity gets contracted once and for a decade, so whoever builds the infrastructure first owns it- ET's management has made it clear that they intend to be a winner. Management has also demonstrated restraint, such as suspending Lake Charles LNG in December when it could not sell down the stake it wanted, redirecting that capital to a pipeline backlog with better risk-adjusted returns.</p>
+          <p class="fine">Written for a class in fall 2026. Not investment advice.</p>
+        </div>
+      </details>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>~90%</b><span>Of 2026E adjusted EBITDA expected to be fee-based</span></div>
+      <div class="stat"><b>6.3%</b><span>Distribution yield, raised 19 consecutive quarters</span></div>
+      <div class="stat"><b>&gt;2x</b><span>Q2 distributable cash flow coverage of the distribution</span></div>
+    </div>
+  </article>
+
+  <div class="pitch-grid">
+    <article class="pcard reveal">
+      <div class="pic"><img src="img/alpha-team.jpg" alt="Alpha Challenge team" style="object-position:center 25%"></div>
+      <div class="body">
+        <span class="where">UNC Alpha Private Capital Case Contest · 2nd place</span>
+        <h3>L.B. Foster</h3>
+        <p>Led our team's take-private pitch of L.B. Foster, presenting as Stellex Capital.</p>
+        <span class="req">Deck available on request</span>
+      </div>
+    </article>
+    <article class="pcard reveal">
+      <div class="pic logo"><img src="img/logo-kennametal.png" alt="Kennametal logo"></div>
+      <div class="body">
+        <span class="where">Carolina BuySide · Industrials</span>
+        <h3>Kennametal</h3>
+        <p>Buyout pitch to the full club: investment thesis, LBO model, and risks and mitigants.</p>
+        <span class="req">Deck available on request</span>
+      </div>
+    </article>
+    <article class="pcard reveal">
+      <div class="pic logo"><img src="img/logo-clarifresh.svg" alt="Clarifresh (formerly Clarifruit) logo"></div>
+      <div class="body">
+        <span class="where">TAMID Group · Fund Track</span>
+        <h3>Clarifruit <span style="font-size:15px;color:var(--ink-3)">(now Clarifresh)</span></h3>
+        <p>Chapter-wide pitch on an Israeli company using computer vision to automate produce quality control. Recorded for nationals.</p>
+        <span class="req">Deck available on request</span>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section id="travel"><div class="wrap">
+  <p class="kicker">Travel</p>
+  <h2>My Travels</h2>
+  <p class="lede">Eleven countries so far, plus home.</p>
+  <div class="map-wrap reveal" id="mapWrap">
+    <svg id="map" viewBox="0 0 960 500" role="img" aria-label="World map of countries visited"></svg>
+    <div class="mcard" id="mcard"></div>
+  </div>
+  <div class="chips" id="chips"></div>
+</div></section>
+
+<section id="outside"><div class="wrap">
+  <p class="kicker">Outside work</p>
+  <h2>Everything else</h2>
+  <div class="mosaic">
+    <figure class="tile big reveal"><img src="img/skydive-1.jpg" alt="Tandem skydive in freefall"><figcaption><b>Skydiving</b>June 2025</figcaption></figure>
+    <figure class="tile reveal"><img src="img/tennis-action.jpg" alt="Playing tennis for Boys' Latin" style="object-position:center 20%"><figcaption><b>Tennis</b>Three-year captain</figcaption></figure>
+    <figure class="tile reveal"><img src="img/basketball.jpg" alt="Shooting a jump shot for Boys' Latin" style="object-position:center 20%"><figcaption><b>Basketball</b>UNC and Ravens fan</figcaption></figure>
+    <figure class="tile reveal"><img src="img/soccer.jpg" alt="Playing soccer for Boys' Latin" style="object-position:45% center"><figcaption><b>Soccer</b>Varsity center back</figcaption></figure>
+    <figure class="tile band reveal" aria-label="Blue Feet, launching spring 2027"><div class="band-art"><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Blue Feet</b><span>Piano and guitar · launching spring 2027</span></div></figure>
+    <figure class="tile wide reveal"><img src="img/la-sals.jpg" alt="Backpacking at sunset in the La Sal Mountains"><figcaption><b>Backpacking</b>La Sal Mountains, Utah</figcaption></figure>
+    <figure class="tile reveal"><img src="img/skiing.jpg" alt="Skiing with family as a kid" style="object-position:30% center"><figcaption><b>Skiing</b>Off-trail when I can</figcaption></figure>
+    <figure class="tile reveal"><img src="img/golf.jpg" alt="On the golf course with family" style="object-position:center 30%"><figcaption><b>Golf</b>With family, whenever we can</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div class="box">
+    <div>
+      <h2>Get in touch</h2>
+      <p>Always glad to talk about a company, a deal, or a trip.</p>
+      <p class="reading">Reading and listening recommendations: <b>The Most Important Thing</b> by Howard Marks, and <b>Acquired</b>.</p>
+    </div>
+    <div class="cta" style="margin:0">
+      <a class="btn solid" href="mailto:chalondo@unc.edu">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/charlieb-london/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="London_Charlie.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Last updated October 2026</div></footer>
+
+<script>
+/* ---------- Timeline content: edit here ---------- */
+const TIMELINE = [
+  { date:"6th grade", title:"Investing seeds are planted",
+    body:"My grandmother taught me how the stock market works. Discussing companies became a way to stay connected over long distances.",
+    img:"img/grandma.jpg" },
+  { date:"Spring 2022", title:"First tennis championship",
+    body:"As a freshman, I was on the team that won the MIAA B Conference title, the first tennis championship in Boys' Latin history.",
+    img:"img/tennis-2022.jpg" },
+  { date:"Summer 2022", title:"London Pressure Washing",
+    body:"With an entrepreneurial spirit, I started a residential pressure washing business. I found clients with door-to-door flyers and social media, and serviced 20+ houses a season through 2025.",
+    img:"img/lpw-logo.png", logo:true },
+  { date:"Fall 2022", title:"Boys' Latin Investment Society",
+    body:"I founded the club as a sophomore, and it grew to more than 80 members. Together we wrote a financial literacy curriculum for the middle school, and after two years of meetings with the board of trustees, we earned a $50K student-managed portfolio.",
+    note:"The club is still going. This spring's capstone winners (above) built a full financial plan for a hypothetical family.",
+    link:{ href:"https://www.instagram.com/blfinancesociety/", text:"@blfinancesociety" },
+    img:"img/investment-society.jpg" },
+  { date:"Dec 2023", title:"Collars & Co.",
+    body:"I wanted to see how a growing company functioned firsthand. After seeing Collars & Co. on Shark Tank, I started my internship there, playing an integral role in securing new retail and private school clients.",
+    img:"img/collars-polo.jpg", logo:true, link:{ href:"https://collarsandco.com", text:"collarsandco.com" } },
+  { date:"2021–25", title:"Awards at Boys' Latin",
+    awards:[
+      { name:"Jack H. Williams Award", year:"2021", desc:"Recognizes leadership in and out of the classroom. Named for Jack H. Williams, Boys' Latin's headmaster from 1962 to 1978." },
+      { name:"Old Boys' Association Award", year:"2023, 2024", desc:"Given by the alumni association for service to the school. It usually goes to upperclassmen, so winning it as a sophomore was a shock. As a junior, I became the first student in school history to win it twice." },
+      { name:"Excellence in Physics Award", year:"2024", desc:"Awarded by the science department for excellence in physics." },
+      { name:"Carson Scholar finalist", year:"2024", desc:"The Carson Scholars Fund recognizes students for academic excellence and dedication to serving their communities.", href:"https://carsonscholars.org" },
+      { name:"Boyd F. Winkelblech Award", year:"2025", desc:"Boys' Latin's award for excellence in mathematics." },
+      { name:"Alumni Award", year:"2025", desc:"Given by Boys' Latin alumni for leadership based on character." }
+    ],
+    img:"img/award-cup.jpg" },
+  { date:"July 2024", title:"Wharton Global Youth Program",
+    body:"Selected as a Williams Scholar to take Wharton's Future of the Business World, a two-week course taught by Wharton faculty with live lectures, business simulations, and a final project predicting where business is headed.",
+    link:{ href:"https://globalyouth.wharton.upenn.edu/programs-courses/future-of-the-business-world/", text:"About the program" },
+    img:"img/wharton-certificate.jpg" },
+  { date:"2024–25", title:"Student Body President",
+    html:`Presented state-of-the-school updates to the board of trustees, ran fundraisers and service trips, and started a Big Brother mentorship program. <a class="inline" href="https://www.boyslatinmd.com/community/news/article/~board/homepage-news/post/charlie-london-25-joins-elite-ranks-of-morehead-cain-scholars" target="_blank" rel="noopener">Read the article</a> Boys' Latin ran when I was named a Morehead-Cain Scholar.`,
+    img:"img/sbp-podium.jpg" },
+  { date:"Spring 2025", title:"Fourth consecutive tennis championship",
+    body:"Our fourth consecutive championship, and my third as captain. We went undefeated the entire season, and I was named all-conference.",
+    img:"img/tennis-2025-team.jpg" },
+  { date:"June 2025", title:"Valedictorian",
+    body:"Gave the valedictory address at graduation.",
+    link:{ href:"https://www.youtube.com/watch?v=yMoXRp1Boq8&t=1425s", text:"Watch the speech" },
+    img:"img/valedictorian.jpg" },
+  { date:"Summer 2025", title:"Outward Bound in Utah",
+    body:"100+ miles along the Colorado River outside Moab, then 13 days in the La Sal Mountains.",
+    img:"img/colorado-river.jpg" },
+  { date:"2025–26", title:"First year at UNC",
+    body:"Started at Kenan-Flagler as a Morehead-Cain Scholar. Joined Carolina BuySide and TAMID, placed 2nd in the Alpha Private Capital Case Contest, and worked as an AI consultant for Meals on Wheels.",
+    img:"img/alpha-team.jpg" },
+  { date:"Summer 2026", title:"Cleveland, then New York and Baltimore",
+    body:"Research intern at Y.O.U. in Cleveland: 250+ interviews and a 30-page report, and all three recommendations drew funding or pilots. Then internships at Bengur Bryan, Brown Advisory, and Patriot Capital.",
+    link:{ href:"Team_Cleveland_Final_Presentation.pdf", text:"Our final presentation" },
+    img:"img/cleveland.jpg" },
+  { date:"July 2026", title:"Founded Arcus Connect",
+    body:"A private network for schools: an alumni directory, mentorship matching, events, and giving. I coded it end to end, and we're onboarding our first pilot schools.",
+    link:{ href:"https://arcusconnect.com", text:"arcusconnect.com" }, img:"img/arcus-app.jpg" }
+];
+
+/* ---------- Travel content: edit here ---------- */
+const PLACES = [
+  { name:"United States", id:"840", ll:[-109.2,38.5], img:"img/travel-usa.jpg", note:"Home base. Here with my Outward Bound crew in Utah's La Sal Mountains." },
+  { name:"Ecuador",  id:"218", ll:[-78.2,-1.8],   img:"img/travel-ecuador.jpg",  note:"Lava arches and cacti in the Galápagos." },
+  { name:"Mexico",   id:"484", ll:[-102.5,23.6],  img:"img/travel-mexico.jpg",   note:"Fishing boats pulled up on the beach." },
+  { name:"Canada",   id:"124", ll:[-106.3,56.1],  img:"img/travel-canada.jpg",   note:"A glacier lake in the Canadian Rockies. No filter." },
+  { name:"Bahamas",  id:"044", ll:[-77.4,25.03],  img:"img/travel-bahamas.jpg",  note:"The beach in front of Atlantis on Paradise Island.", credit:'Photo: <a href="https://commons.wikimedia.org/wiki/File:Beach_in_front_of_Royal_Towers_Atlantis.jpg" target="_blank" rel="noopener">Fred Hsu</a>, CC BY-SA 3.0' },
+  { name:"Aruba",    id:"533", ll:[-69.97,12.52], img:"img/travel-aruba.jpg",    note:"A big family trip and a lot of beach time." },
+  { name:"Israel",   id:"376", ll:[34.85,31.0],   img:"img/travel-israel.jpg",   note:"Rappelling down a canyon wall." },
+  { name:"Kenya",    id:"404", ll:[37.9,-0.02],   img:"img/travel-kenya.jpg",    note:"On a game drive in the Maasai Mara, camera in hand." },
+  { name:"Tanzania", id:"834", ll:[34.9,-6.4],    img:"img/travel-tanzania.jpg", note:"A pride of lions with their cubs." },
+  { name:"Thailand", id:"764", ll:[100.99,15.9],  img:"img/travel-thailand.jpg", note:"Life along the canals." },
+  { name:"Cambodia", id:"116", ll:[104.99,12.57], img:"img/travel-cambodia.jpg", note:"The steps of Angkor Wat." },
+  { name:"Vietnam",  id:"704", ll:[108.28,14.06], img:"img/travel-vietnam.jpg",  note:"Kayaking through the karsts of Ha Long Bay." }
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pic = (o, cls) => o.img
+  ? (o.logo ? `<div class="pic logo"><img src="${o.img}" alt=""></div>`
+            : `<div class="pic fit" style="--bg:url('${o.img}')"><img src="${o.img}" alt=""></div>`)
+  : `<div class="pic"><div class="ph">${esc(o.ph || "Photo")}</div></div>`;
+
+/* ---------- Build timeline ---------- */
+const tl = document.getElementById("tl");
+const mobile = () => window.matchMedia("(max-width:760px)").matches;
+TIMELINE.forEach((e, i) => {
+  const el = document.createElement("div");
+  el.className = "item";
+  el.innerHTML = `
+    <span class="dot"></span>
+    <button class="trig" aria-expanded="false"><span class="d">${esc(e.date)}</span><span class="t">${esc(e.title)}</span></button>
+    <div class="card">${pic(e)}<div class="body">
+      ${e.body ? `<p>${esc(e.body)}</p>` : ""}
+      ${e.html ? `<p>${e.html}</p>` : ""}
+      ${e.awards ? `<ul class="awards">${e.awards.map((a, k) => `<li tabindex="0" data-k="${k}"><span>${esc(a.name)}</span><em>${esc(a.year)}</em></li>`).join("")}</ul><p class="aw-desc">Hover over an award to learn more.</p>` : ""}
+      ${e.note ? `<p style="margin-top:8px;font-size:13px;color:var(--ink-3)">${esc(e.note)}</p>` : ""}
+      ${e.list ? `<ul>${e.list.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+      ${e.link ? `<a href="${e.link.href}" target="_blank" rel="noopener">${esc(e.link.text)} →</a>` : ""}
+    </div></div>`;
+  const trig = el.querySelector(".trig"), card = el.querySelector(".card");
+  trig.addEventListener("click", () => {
+    if (mobile()) {
+      const open = !el.classList.contains("open");
+      closeAll();
+      if (open) { el.classList.add("open"); trig.setAttribute("aria-expanded","true"); }
+      layoutTimeline();
+    } else {
+      el.classList.toggle("pinned"); openItem(el);
+    }
+  });
+  // desktop: stay open while the pointer is on the dot, the label, or the card
+  [trig, el.querySelector(".dot"), card].forEach(n => {
+    n.addEventListener("mouseenter", () => { if (!mobile()) openItem(el); });
+    n.addEventListener("mouseleave", () => { if (!mobile()) scheduleClose(el); });
+  });
+  if (e.awards) {
+    const out = el.querySelector(".aw-desc");
+    el.querySelectorAll(".awards li").forEach(li => {
+      const a = e.awards[+li.dataset.k];
+      const show = () => {
+        el.querySelectorAll(".awards li").forEach(x => x.classList.toggle("on", x === li));
+        out.innerHTML = esc(a.desc) + (a.href ? ` <a class="inline" href="${a.href}" target="_blank" rel="noopener">Learn more</a>` : "");
+      };
+      li.addEventListener("mouseenter", show); li.addEventListener("focus", show); li.addEventListener("click", show);
+    });
+  }
+  tl.appendChild(el);
+});
+let hideTimer = null, current = null;
+function closeAll(){ tl.querySelectorAll(".item.open").forEach(x => { x.classList.remove("open","pinned"); x.querySelector(".trig").setAttribute("aria-expanded","false"); }); current = null; }
+function openItem(el){
+  clearTimeout(hideTimer);
+  if (current && current !== el) { current.classList.remove("open","pinned"); current.querySelector(".trig").setAttribute("aria-expanded","false"); }
+  current = el; el.classList.add("open"); el.querySelector(".trig").setAttribute("aria-expanded","true");
+  // keep tall cards inside the viewport (below the sticky nav)
+  const card = el.querySelector(".card"); card.style.marginTop = "0px";
+  requestAnimationFrame(() => {
+    const r = card.getBoundingClientRect(), top = 76, bottom = innerHeight - 12;
+    if (r.top < top) card.style.marginTop = (top - r.top) + "px";
+    else if (r.bottom > bottom) card.style.marginTop = (bottom - r.bottom) + "px";
+  });
+}
+function scheduleClose(el){
+  clearTimeout(hideTimer);
+  hideTimer = setTimeout(() => { if (!el.classList.contains("pinned")) { el.classList.remove("open"); el.querySelector(".trig").setAttribute("aria-expanded","false"); if (current === el) current = null; } }, 400);
+}
+document.addEventListener("click", ev => { if (!mobile() && !tl.contains(ev.target)) closeAll(); });
+
+const track = document.getElementById("track"), draw = document.getElementById("draw");
+let pathLen = 0, dotYs = [];
+function layoutTimeline(){
+  const W = tl.clientWidth, items = [...tl.querySelectorAll(".item")];
+  const pts = [];
+  items.forEach((el, i) => {
+    const dot = el.querySelector(".dot"), trig = el.querySelector(".trig"), card = el.querySelector(".card");
+    const y = el.offsetTop + el.offsetHeight / 2;
+    if (mobile()) {
+      pts.push([20, el.offsetTop + 36]);
+      dot.style.left = ""; trig.style.left = trig.style.right = ""; card.style.left = card.style.right = "";
+      return;
+    }
+    const left = i % 2 === 0, x = Math.round(W * (left ? 0.36 : 0.64));
+    dot.style.left = x + "px";
+    if (left) { trig.style.right = (W - x + 28) + "px"; trig.style.left = "auto"; trig.style.textAlign = "right"; card.style.left = (x + 32) + "px"; card.style.right = "auto"; }
+    else { trig.style.left = (x + 28) + "px"; trig.style.right = "auto"; trig.style.textAlign = "left"; card.style.right = (W - x + 32) + "px"; card.style.left = "auto"; }
+    pts.push([x, y]);
+  });
+  let d;
+  if (mobile()) {
+    d = `M 20 0 L 20 ${tl.offsetHeight}`;
+  } else {
+    d = `M ${pts[0][0]} 0 L ${pts[0][0]} ${pts[0][1]}`;
+    for (let i = 1; i < pts.length; i++) {
+      const [a, b] = pts[i-1], [c, e] = pts[i], k = (e - b) * 0.6;
+      d += ` C ${a} ${b + k}, ${c} ${e - k}, ${c} ${e}`;
+    }
+    const last = pts[pts.length - 1];
+    d += ` L ${last[0]} ${tl.offsetHeight}`;
+  }
+  track.setAttribute("d", d); draw.setAttribute("d", d);
+  pathLen = draw.getTotalLength();
+  draw.style.strokeDasharray = pathLen;
+  dotYs = pts.map(p => p[1]);
+  onScroll();
+}
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function onScroll(){
+  document.getElementById("nav").classList.toggle("scrolled", scrollY > 8);
+  const r = tl.getBoundingClientRect(), h = tl.offsetHeight;
+  const reach = reduced ? h : Math.max(0, Math.min(h, innerHeight * 0.65 - r.top));
+  // map the reached y-position to a length along the path
+  draw.style.strokeDashoffset = pathLen * (1 - reach / h);
+  tl.querySelectorAll(".item").forEach((el, i) => el.classList.toggle("reached", dotYs[i] <= reach));
+}
+document.getElementById("tlHint").textContent = mobile() ? "Tap any point for more." : "Hover over any point for more.";
+addEventListener("scroll", onScroll, { passive:true });
+addEventListener("resize", layoutTimeline);
+addEventListener("load", layoutTimeline);
+layoutTimeline();
+
+/* ---------- Reveal on scroll ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold:.15 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+/* ---------- Travel map ---------- */
+const chips = document.getElementById("chips"), mcard = document.getElementById("mcard"), mapWrap = document.getElementById("mapWrap");
+PLACES.forEach(p => {
+  const b = document.createElement("button");
+  b.className = "chip"; b.textContent = p.name; b.dataset.id = p.id;
+  b.addEventListener("mouseenter", () => showPlace(p)); b.addEventListener("focus", () => showPlace(p));
+  b.addEventListener("click", () => showPlace(p)); b.addEventListener("mouseleave", hidePlace);
+  chips.appendChild(b);
+});
+let projection = null;
+function showPlace(p){
+  document.querySelectorAll(`[data-id]`).forEach(n => n.classList.toggle("hot", n.dataset.id === p.id));
+  mcard.innerHTML = `${pic({ ...p, ph:"Photo: " + p.name })}<div class="body"><b>${esc(p.name)}</b>${p.note ? esc(p.note) : ""}${p.credit ? `<small style="display:block;margin-top:6px;font-size:11px;color:var(--ink-3)">${p.credit}</small>` : ""}</div>`;
+  if (projection) {
+    const [x, y] = projection(p.ll), svg = document.getElementById("map");
+    const s = svg.getBoundingClientRect().width / 960, pad = 12;
+    let left = x * s + pad + 16, top = y * s + pad - 90;
+    if (left + 260 > mapWrap.clientWidth) left = x * s + pad - 276;
+    top = Math.max(8, Math.min(top, mapWrap.clientHeight - 230));
+    mcard.style.left = left + "px"; mcard.style.top = top + "px";
+  } else { mcard.style.left = "16px"; mcard.style.top = "16px"; }
+  mcard.classList.add("show");
+}
+function hidePlace(){ mcard.classList.remove("show"); document.querySelectorAll(".hot").forEach(n => n.classList.remove("hot")); }
+mapWrap.addEventListener("mouseleave", hidePlace);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+(async () => {
+  try {
+    const world = await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json").then(r => r.json());
+    const land = topojson.feature(world, world.objects.countries).features.filter(f => f.id !== "010");
+    projection = d3.geoNaturalEarth1().fitExtent([[10,10],[950,490]], { type:"FeatureCollection", features:land });
+    const path = d3.geoPath(projection), svg = d3.select("#map");
+    const been = new Set(PLACES.map(p => p.id));
+    svg.append("g").selectAll("path").data(land).join("path")
+      .attr("class", f => "land" + (been.has(f.id) ? " been" : ""))
+      .attr("data-id", f => been.has(f.id) ? f.id : null)
+      .attr("d", path);
+    svg.append("g").selectAll("circle").data(PLACES).join("circle")
+      .attr("class", "pin").attr("data-id", p => p.id).attr("r", 6)
+      .attr("cx", p => projection(p.ll)[0]).attr("cy", p => projection(p.ll)[1])
+      .on("mouseenter", (ev, p) => showPlace(p)).on("click", (ev, p) => showPlace(p));
+  } catch (e) {
+    document.getElementById("map").style.display = "none";
+  }
+})();
+</script>
+</body>
+</html>
