@@ -11,7 +11,12 @@ A static site: `index.html` plus `img/` and the resume PDF. No build step.
     python3 -m http.server 8765
 Then open http://localhost:8765
 
-## Deploy (Vercel, free)
+## Live site
+https://clondon-lab.github.io (GitHub Pages, repo clondon-lab/clondon-lab.github.io). Every push to `main` republishes in about a minute:
+
+    git add -A && git commit -m "Update" && git push
+
+## Deploy on Vercel instead (optional)
 1. Create a GitHub repo and push this folder to it.
 2. On vercel.com: Add New > Project > import the repo. Framework preset: "Other". No build command, output directory `.`
 3. Every push to `main` redeploys automatically.
